@@ -1,0 +1,4 @@
+{
+  "/page": "app/page.js",
+  "/profiles/[nameTag]/page": "app/profiles/[nameTag]/page.js"
+}
