@@ -1,1 +1,9 @@
 @import "tailwindcss";
+
+@theme {
+  --color-alabaster: #e7e3da;
+  --color-mountpink: #9a7aa0;
+  --color-violet: #87677b;
+  --color-moonstone: #429ea6;
+  --color-indigodye: #153b50;
+}

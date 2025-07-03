@@ -1,4 +1,5 @@
 import getAccountbyNameAndTag from "api/getAccountByNameAndTag";
+import getRankByPUUID from "api/getRankByPUUID";
 import getSummonerbyPUUID from "api/getSummonerByPUUID";
 import ProfileCard from "app/ui/ProfileCard";
 
@@ -11,8 +12,10 @@ export default async function Page({
   const [gameName, tag] = nameTag.split("-");
   const accountInfo = await getAccountbyNameAndTag(gameName, tag);
   const summonerInfo = await getSummonerbyPUUID(accountInfo.puuid);
+  const rankInfo = await getRankByPUUID(accountInfo.puuid);
+  const tftRank = rankInfo.find((i) => i.queueType === "RANKED_TFT");
 
-  console.log(summonerInfo);
+  console.log(rankInfo);
 
   return (
     <>
@@ -20,6 +23,7 @@ export default async function Page({
         name={gameName}
         tag={tag}
         profileIconId={summonerInfo.profileIconId}
+        tier={tftRank?.tier || "Unranked"}
       />
     </>
   );
