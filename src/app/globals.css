@@ -5,5 +5,15 @@
   --color-mountpink: #9a7aa0;
   --color-violet: #87677b;
   --color-moonstone: #429ea6;
-  --color-indigodye: #153b50;
+  --color-indigodye-50: #eff7fb;
+  --color-indigodye-100: #cfe6f2;
+  --color-indigodye-200: #aed5ea;
+  --color-indigodye-300: #8ec4e1;
+  --color-indigodye-400: #6eb3d8;
+  --color-indigodye-500: #4ea2d0;
+  --color-indigodye-600: #3390c1;
+  --color-indigodye-700: #2b78a1;
+  --color-indigodye-800: #226081;
+  --color-indigodye-900: #1a4861;
+  --color-indigodye-950: #153b50;
 }

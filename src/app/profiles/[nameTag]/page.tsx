@@ -1,7 +1,11 @@
+import { MatchDTO } from "api/dtos";
 import getAccountbyNameAndTag from "api/getAccountByNameAndTag";
+import getMatchByMatchId from "api/getMatchByMatchId";
+import getMatchIdsByPUUID from "api/getMatchIdsByPUUID";
 import getRankByPUUID from "api/getRankByPUUID";
 import getSummonerbyPUUID from "api/getSummonerByPUUID";
-import ProfileCard from "app/ui/ProfileCard";
+import MatchAccordion from "ui/MatchAccordion";
+import ProfileCard from "ui/ProfileCard";
 
 export default async function Page({
   params,
@@ -14,8 +18,21 @@ export default async function Page({
   const summonerInfo = await getSummonerbyPUUID(accountInfo.puuid);
   const rankInfo = await getRankByPUUID(accountInfo.puuid);
   const tftRank = rankInfo.find((i) => i.queueType === "RANKED_TFT");
+  const matchIds = await getMatchIdsByPUUID(accountInfo.puuid);
+  const matches: MatchDTO[] = [];
 
-  console.log(rankInfo);
+  for (const matchId of matchIds) {
+    const match = await getMatchByMatchId(matchId);
+    matches.push(match);
+  }
+
+  const matchAccordions = matches.map((m) => (
+    <MatchAccordion
+      mainParticipantId={accountInfo.puuid}
+      participants={m.info.participants}
+      key={m.metadata.match_id}
+    ></MatchAccordion>
+  ));
 
   return (
     <>
@@ -25,6 +42,7 @@ export default async function Page({
         profileIconId={summonerInfo.profileIconId}
         tier={tftRank?.tier || "Unranked"}
       />
+      {matchAccordions}
     </>
   );
 }

@@ -22,7 +22,7 @@ export default function SearchBar({ placeholder }: { placeholder: string }) {
         Search
       </label>
       <input
-        className="block w-sm h-7 rounded-md bg-slate-300 border border-slate-200 py-[9px] pl-10 text-sm outline-2 placeholder:text-slate-500"
+        className="block w-sm h-7 rounded-md bg-alabaster pl-10 text-sm placeholder:text-indigodye"
         placeholder={placeholder}
         id="searchBar"
         type="text"

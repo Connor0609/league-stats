@@ -2,6 +2,7 @@
   "name": "league-stats",
   "packageManager": "yarn@4.9.2",
   "dependencies": {
+    "@base-ui-components/react": "^1.0.0-beta.1",
     "next": "^15.3.3",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
@@ -15,6 +16,7 @@
   "devDependencies": {
     "@tailwindcss/postcss": "^4.1.10",
     "@types/node": "24.0.3",
+    "@types/react": "^19.1.8",
     "autoprefixer": "^10.4.21",
     "eslint": "^9",
     "eslint-config-next": "15.3.3",
