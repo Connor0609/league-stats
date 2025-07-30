@@ -1,5 +1,5 @@
 import { Accordion } from "@base-ui-components/react/accordion";
-import { ParticipantDTO } from "api/dtos";
+import { ParticipantDto } from "data/dtos";
 import ChampionSprite from "./ChampionSprite";
 
 export default function MatchAccordion({
@@ -7,7 +7,7 @@ export default function MatchAccordion({
   participants,
 }: {
   mainParticipantId: string;
-  participants: ParticipantDTO[];
+  participants: ParticipantDto[];
 }) {
   const mainParticipant = participants.find(
     (p) => p.puuid == mainParticipantId

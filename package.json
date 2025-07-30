@@ -3,6 +3,7 @@
   "packageManager": "yarn@4.9.2",
   "dependencies": {
     "@base-ui-components/react": "^1.0.0-beta.1",
+    "mongodb": "^6.18.0",
     "next": "^15.3.3",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"

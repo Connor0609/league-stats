@@ -1,9 +1,9 @@
-import { MatchDTO } from "api/dtos";
-import getAccountbyNameAndTag from "api/getAccountByNameAndTag";
-import getMatchByMatchId from "api/getMatchByMatchId";
-import getMatchIdsByPUUID from "api/getMatchIdsByPUUID";
-import getRankByPUUID from "api/getRankByPUUID";
-import getSummonerbyPUUID from "api/getSummonerByPUUID";
+import { MatchDto } from "data/dtos";
+import getAccountbyNameAndTag from "data/getAccountByNameAndTag";
+import getMatchByMatchId from "data/getMatchByMatchId";
+import getMatchIdsByPUUID from "data/getMatchIdsByPUUID";
+import getRankByPUUID from "data/getRankByPUUID";
+import getSummonerbyPUUID from "data/getSummonerByPUUID";
 import MatchAccordion from "ui/MatchAccordion";
 import ProfileCard from "ui/ProfileCard";
 
@@ -19,7 +19,7 @@ export default async function Page({
   const rankInfo = await getRankByPUUID(accountInfo.puuid);
   const tftRank = rankInfo.find((i) => i.queueType === "RANKED_TFT");
   const matchIds = await getMatchIdsByPUUID(accountInfo.puuid);
-  const matches: MatchDTO[] = [];
+  const matches: MatchDto[] = [];
 
   for (const matchId of matchIds) {
     const match = await getMatchByMatchId(matchId);
