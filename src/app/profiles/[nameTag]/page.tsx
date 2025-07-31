@@ -1,9 +1,8 @@
 import { MatchDto } from "data/dtos";
-import getAccountbyNameAndTag from "data/getAccountByNameAndTag";
-import getMatchByMatchId from "data/getMatchByMatchId";
-import getMatchIdsByPUUID from "data/getMatchIdsByPUUID";
-import getRankByPUUID from "data/getRankByPUUID";
-import getSummonerbyPUUID from "data/getSummonerByPUUID";
+import { getAccountbyNameAndTag } from "data/RiotApiAccount";
+import { getMatchByMatchId, getMatchIdsByPUUID } from "data/RiotApiTFTMatch";
+import { getRankByPUUID } from "data/RiotApiTFTLeague";
+import { getSummonerbyPUUID } from "data/RiotApiTFTSummoner";
 import MatchAccordion from "ui/MatchAccordion";
 import ProfileCard from "ui/ProfileCard";
 
