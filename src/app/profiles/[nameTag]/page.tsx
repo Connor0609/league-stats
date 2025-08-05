@@ -25,13 +25,17 @@ export default async function Page({
     matches.push(match);
   }
 
-  const matchAccordions = matches.map((m) => (
-    <MatchAccordion
-      mainParticipantId={accountInfo.puuid}
-      participants={m.info.participants}
-      key={m.metadata.match_id}
-    ></MatchAccordion>
-  ));
+  const matchAccordions = matches.map((m) => {
+    const set = m.info.tft_set_number;
+    return (
+      <MatchAccordion
+        mainParticipantId={accountInfo.puuid}
+        participants={m.info.participants}
+        set={set}
+        key={m.metadata.match_id}
+      ></MatchAccordion>
+    );
+  });
 
   return (
     <>

@@ -5,9 +5,11 @@ import ChampionSprite from "./ChampionSprite";
 export default function MatchAccordion({
   mainParticipantId,
   participants,
+  set,
 }: {
   mainParticipantId: string;
   participants: ParticipantDto[];
+  set: number;
 }) {
   const mainParticipant = participants.find(
     (p) => p.puuid == mainParticipantId
@@ -16,6 +18,7 @@ export default function MatchAccordion({
     return (
       <ChampionSprite
         championId={u.character_id}
+        set={set}
         key={crypto.randomUUID()}
       ></ChampionSprite>
     );
